@@ -17,7 +17,7 @@ func CheckPermission(src string) bool {
 
 // 是否存在目录，不存在新建
 func IsNotExistMkDir(src string) error {
-	if notExist := CheckNotExist(src); !notExist {
+	if notExist := CheckNotExist(src); notExist == true {
 		if err := MkDir(src); err != nil {
 			return err
 		}
